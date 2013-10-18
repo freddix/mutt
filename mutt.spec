@@ -1,17 +1,16 @@
 Summary:	The Mutt Mail User Agent
 Name:		mutt
-Version:	1.5.21
-Release:	3
+Version:	1.5.22
+Release:	1
 License:	GPL
 Group:		Applications/Mail
 Source0:	ftp://ftp.mutt.org/mutt/devel/%{name}-%{version}.tar.gz
-# Source0-md5:	a29db8f1d51e2f10c070bf88e8a553fd
+# Source0-md5:	48267aba1bc53db636777f4a1ec87cb6
 Patch0:		%{name}-manual.patch
 Patch1:		%{name}-Muttrc_mbox_path.patch
 Patch2:		%{name}-po.patch
-Patch3:		%{name}-send_charset.patch
-Patch4:		%{name}-forcedotlock.patch
-Patch5:		%{name}-gpgme.patch
+Patch3:		%{name}-forcedotlock.patch
+Patch4:		%{name}-gpgme.patch
 URL:		http://www.mutt.org/
 BuildRequires:	autoconf
 BuildRequires:	automake
@@ -39,9 +38,8 @@ bindable keys, and threaded sorting mode.
 %patch2 -p1
 %patch3 -p1
 %patch4 -p1
-%patch5 -p1
 
-sed -i "s|AM_C_PROTOTYPES||" configure.ac
+%{__sed} -i "s|AM_C_PROTOTYPES||" configure.ac
 
 %build
 %{__aclocal} -I m4
@@ -72,8 +70,6 @@ rm -rf $RPM_BUILD_ROOT
 %{__make} install \
 	DESTDIR=$RPM_BUILD_ROOT	\
 	DOTLOCK_GROUP=
-
-%{__patch} -p2 -d $RPM_BUILD_ROOT%{_sysconfdir} < %{PATCH3}
 
 # keep manual.txt.gz, the rest is installed as %doc
 rm -rf $RPM_BUILD_ROOT%{_docdir}/%{name}/[!m]*
