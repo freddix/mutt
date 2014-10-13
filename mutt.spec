@@ -91,7 +91,6 @@ rm -rf $RPM_BUILD_ROOT
 %attr(755,root,root) %{_bindir}/muttbug
 %attr(755,root,root) %{_bindir}/pgp*
 %attr(755,root,root) %{_bindir}/smime_keys
-%attr(2755,root,mail) %{_bindir}/mutt_dotlock
 %{_docdir}/%{name}
 %{_mandir}/man*/*
 
