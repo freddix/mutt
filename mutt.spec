@@ -1,11 +1,11 @@
 Summary:	The Mutt Mail User Agent
 Name:		mutt
-Version:	1.5.22
+Version:	1.5.23
 Release:	1
 License:	GPL
 Group:		Applications/Mail
-Source0:	ftp://ftp.mutt.org/mutt/devel/%{name}-%{version}.tar.gz
-# Source0-md5:	48267aba1bc53db636777f4a1ec87cb6
+Source0:	http://downloads.sourceforge.net/mutt/%{name}-%{version}.tar.gz
+# Source0-md5:	11f5b6a3eeba1afa1257fe93c9f26bff
 Patch0:		%{name}-manual.patch
 Patch1:		%{name}-Muttrc_mbox_path.patch
 Patch2:		%{name}-po.patch
